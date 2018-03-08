@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title>WPTslider 1.05</title>
+		<link type="text/css" rel="stylesheet" href="css/wptslider-1.05.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/wptslider-1.05.min.js"></script>
+		<script type="text/javascript" src="js/mousewheel.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+
+<script type="text/javascript">
+			$(document).ready(function(){
+				$('#slider').wptslider();
+				$('.tool-class').css('visibility','hidden');
+			});
+			$(document).ready(function(){
+$("#page").click(function(){
+nextanim();
+});
+});
+			function nextanim()
+			{
+			//var l= next;
+							var sId= vars.active.attr('id');
+				sId= sId.replace("wpt-item","");
+			//	alert(sId);
+			var array = $(vars.active[0]).find('.tool-class');
+			if(array.length < 1)
+			{
+			   $('#slider').data('wptslider').next();
+			}
+			array.sort(SortByName);
+			var el = array.get(i);
+			var order = $(el).data('order');
+			//var n= $next();
+			for(var i=0; i< array.length;i++)
+			
+			{
+				
+			el = array.get(i);
+				if(order == $(el).data('order'))
+				{
+				
+				$(el).css('visibility','visible');
+				$(el).removeClass('tool-class');
+				
+				}
+				else
+				{
+				break;
+				}
+				
+			}
+			}
+			function SortByName(a, b){
+			  var ao = $(a).data('order');
+			  var bo = $(b).data('order'); 
+			  return ((ao < bo) ? -1 : ((ao > bo) ? 1 : 0));
+			}
+
+
+		</script>
+		<style type="text/css">
+			body { background-color:white; }
+			
+			#slider {
+				width:800px;
+				height:600px;
+				
+				/*IE bugfix*/
+				padding:0;
+				margin-left:13%;
+			}
+			
+			#slider ol li { 
+				/*list-style-image: url(img/bulletpoint.png) ; 
+			*/
+			list-style: disc;
+		}
+			
+				#slider li .header{
+					background: white;
+					position: relative;
+					padding-left : 20px;
+					overflow: hidden;
+					}
+
+				#slider li  .content {
+					background: white;
+					
+	 				padding-left : 46px;
+					padding-bottom: 490px;
+					overflow: hidden;
+
+					
+				}
+			
+			#page {
+				width:100%;
+				/*height : 425px;*/
+				margin:32px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<ul id="slider">
+				##RTF##
+				 
+				
+			</ul>
+			
+		</div>
+		<div style="position:absolute; overflow:hidden; left:930px; top:630px; width:136px; height:37px; z-index:6">
+<div >
+<div><font color="black" face="Candara" >
+	<script type="text/javascript">
+<!--
+var currentTime = new Date()
+var hours = currentTime.getHours()
+var minutes = currentTime.getMinutes()
+if (minutes < 10){
+minutes = "0" + minutes
+}
+document.write(hours + ":" + minutes + " ")
+if(hours > 11){
+document.write("PM")
+} else {
+document.write("AM")
+}
+var currentTime = new Date()
+var month = currentTime.getMonth() + 1
+var day = currentTime.getDate()
+var year = currentTime.getFullYear()
+document.write(" ("+month + "/" + day + "/" + year+")")
+//-->
+</script>
+
+</font></div>
+
+</div></div>
+
+		<!--<div style="background-color:white">
+		<input type="button" value"next animation" onclick="nextanim()" />
+		</div>-->
+	</body>
+</html>
